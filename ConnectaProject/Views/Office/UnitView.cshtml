@@ -1,0 +1,132 @@
+﻿@model IEnumerable<ConnectaProject.Models.OfficeModel>
+
+@{
+    ViewBag.Title = "UnitView";
+}
+
+<div class="wrapper">
+    <div class="container-fluid">
+        <!-- Page-Title -->
+        <div class="page-title-box">
+            <div class="row align-items-center">
+                <div class="col-sm-6">
+                    <h4 class="page-title">Company units</h4>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-right">
+                        <li class="breadcrumb-item"><a href="javascript:void(0);">Home</a></li>
+                        <li class="breadcrumb-item active">Users</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- end row -->
+        </div>
+
+
+        <!-- START ROW -->
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card m-b-30">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">
+                            Units list
+                            @*@Html.ActionLink("+ ADD", "Create", "HomeController", null, new { @id = "modal", @type = "button", @class = "btn btn-info waves-effect waves-light", @data_toggle = "modal", @data_target = "#myModal" })*@
+                            <button type="button" class="btn btn-info waves-effect waves-light" data-url="@Url.Action("AddOffice", "Office" )"> + ADD</button>
+                        </h4>
+
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Name)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.City)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Address)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Type)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Name)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.City)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Address)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Type)
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <input type="button" class="btn btn-info waves-effect waves-light" value="Edit" data-url="@Url.Action("OfficeDetails", "Office", new { Id = item.OfficeKey })" />
+                                                <input type="button" id="@item.OfficeKey"  class="btn btn-danger waves-effect waves-light" value="Delete" data-url="@Url.Action("DeleteOffice", "Office")" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </table>
+                    </div>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- END ROW -->
+
+    </div>
+    <!-- end container-fluid -->
+</div>
+
+<div class="modal fade" id="myModal1" role="dialog">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myModalLabel">
+                    DELETE
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+                <div class="modal-body">
+
+                    <p>Are you sure you want to delete this record?</p>
+
+                </div>
+
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-danger pull-right" data-dismiss="modal">Cancel</button>
+
+                    <button type="Submit" class="btn btn-success pull-right" id="confirmOk">Ok</button>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+<script src="@Url.Content("~/Scripts/js/jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/js/ModalControl.js")" type="text/javascript"></script>

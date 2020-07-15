@@ -1,0 +1,9 @@
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\bin\Debug\DataLibrary.dll
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\bin\Debug\DataLibrary.pdb
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\bin\Debug\Dapper.dll
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\bin\Debug\Dapper.xml
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\obj\Debug\DataLibrary.dll
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\obj\Debug\DataLibrary.pdb
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\obj\Debug\DataLibrary.csprojAssemblyReference.cache
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\obj\Debug\DataLibrary.csproj.CoreCompileInputs.cache
+D:\Projects\Connecta\ConnectaProjectSolution\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
